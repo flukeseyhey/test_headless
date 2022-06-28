@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://src/main/adventure/weapons/Weapon.tscn" type="PackedScene" id=1]
-
-[node name="SubmachineGun" instance=ExtResource( 1 )]
-semi_auto = false
-
-[node name="AttackCooldown" parent="." index="2"]
-wait_time = 0.1
