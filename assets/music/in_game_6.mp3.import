@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/in_game_6.mp3-d52662dbe577527ec964268e168f7947.mp3str"
+
+[deps]
+
+source_file="res://assets/music/in_game_6.mp3"
+dest_files=[ "res://.import/in_game_6.mp3-d52662dbe577527ec964268e168f7947.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

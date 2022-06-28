@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/objects/tank/BaseTank.tres" type="Texture" id=1]
+[ext_resource path="res://src/main/adventure/Team.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/main/adventure/actors/Health.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/main/adventure/actors/BaseTank.gd" type="Script" id=4]
+[ext_resource path="res://src/main/adventure/abilities/Zap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/main/adventure/abilities/Boost.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/main/adventure/abilities/Invisible.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 50.0
+
+[node name="BaseTank" type="KinematicBody2D"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 6, 0 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Body" type="Sprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 0.835, 0.835 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 4, 4, 124, 155 )
+
+[node name="Boost" parent="." instance=ExtResource( 6 )]
+
+[node name="Zap" parent="." instance=ExtResource( 5 )]
+
+[node name="Invisible" parent="." instance=ExtResource( 7 )]
+
+[node name="Health" parent="." instance=ExtResource( 3 )]
+
+[node name="Team" parent="." instance=ExtResource( 2 )]
+
+[connection signal="using_ability" from="Boost" to="." method="_on_Boost_using_ability"]
+[connection signal="using_zap" from="Zap" to="." method="_on_Zap_using_zap"]
+[connection signal="tween_all_completed" from="Zap/Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="blink_timeout" from="Invisible" to="." method="_on_Invisible_blink_timeout"]
+[connection signal="set_tank_visible" from="Invisible" to="." method="_on_Invisible_set_tank_visible"]
+
+[editable path="Zap"]

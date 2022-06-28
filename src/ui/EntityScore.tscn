@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/ui/EntityScore.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/tank-battle.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/leaderboard/label-backgrounf.png" type="Texture" id=4]
+[ext_resource path="res://src/ui/scoreboard/Medal.tscn" type="PackedScene" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 4 )
+region_rect = Rect2( 14, 14, 289, 64 )
+margin_left = 26.0
+margin_right = 23.0
+margin_top = 16.0
+margin_bottom = 18.0
+
+[node name="EntityScore" type="PanelContainer"]
+anchor_left = 0.00416667
+anchor_right = 0.642188
+anchor_bottom = 0.203704
+mouse_filter = 2
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 26.0
+margin_top = 16.0
+margin_right = 1246.0
+margin_bottom = 212.0
+custom_constants/margin_top = -15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = -15
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 15.0
+margin_top = -15.0
+margin_right = 1220.0
+margin_bottom = 211.0
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Medal" parent="MarginContainer/VBoxContainer" instance=ExtResource( 5 )]
+position = Vector2( -49, 109.225 )
+scale = Vector2( 1.45, 1.45 )
+
+[node name="Space1" type="Control" parent="MarginContainer/VBoxContainer"]
+margin_right = 20.0
+margin_bottom = 226.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_left = 20.0
+margin_right = 1074.0
+margin_bottom = 226.0
+rect_min_size = Vector2( 225, 50 )
+custom_colors/font_color = Color( 0.00392157, 0.188235, 0.423529, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "displayname"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Space2" type="Control" parent="MarginContainer/VBoxContainer"]
+margin_left = 1074.0
+margin_right = 1094.0
+margin_bottom = 226.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_horizontal = 3
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_left = 1094.0
+margin_right = 1205.0
+margin_bottom = 226.0
+custom_colors/font_color = Color( 0.988235, 0.619608, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.121569, 0.0705882, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

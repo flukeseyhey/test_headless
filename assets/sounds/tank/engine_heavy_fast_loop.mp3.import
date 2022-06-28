@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/engine_heavy_fast_loop.mp3-3e5217029ab2d8e859e76e1d795095a6.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/tank/engine_heavy_fast_loop.mp3"
+dest_files=[ "res://.import/engine_heavy_fast_loop.mp3-3e5217029ab2d8e859e76e1d795095a6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

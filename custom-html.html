@@ -1,0 +1,151 @@
+<!-- 
+
+    import to godot html part, section header include,
+    and then goto html -> head -> "<style type='text/css'>"
+    comment all to
+    -> #body
+    -> #status-progress
+    -> #status-progress-inner
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        body {
+            touch-action: none;
+            margin: 0;
+            border: 0 none;
+            padding: 0;
+            text-align: center;
+            background-image: url("./images/background.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: 100%;
+			background-color: black;
+        }
+
+        #status-progress {
+            width: 600px;
+			height: 50px;
+			background-image: url("./images/progress-bar-out.png");
+            background-repeat: no-repeat;
+			visibility: visible;
+        }
+
+        #status-progress-inner {
+            height: 100%;
+			width: 0;
+			transition: width 0.5s linear;
+			background-image: url("./images/progress-bar-in.png");
+			background-repeat: no-repeat;
+        }
+
+        #rotatescreenWarn {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            justify-content: center;
+            align-items: center;
+            background-color: #124d00;
+            z-index: 5;
+        }
+
+        #rotateicon {
+            position: absolute;
+            top: 50% !important;
+            left: 50% !important;
+			margin: 2rem 0 0 -1.5rem;
+            background-image: url("./images/rotate.png");
+            background-repeat: no-repeat;
+            width: 56px;
+            height: 56px;
+        }
+
+        #fullscreenBtn {
+            position: absolute;
+            top: 90% !important;
+            left: 90% !important;
+            background-image: url("./images/fullscreen-btn.png");
+            background-repeat: no-repeat;
+            width: 56px;
+            height: 56px;
+        }
+
+        .center-text {
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            color: white !important;
+            transform: translate(-50%, -50%) !important;
+            -ms-transform: translate(-50%, -50%) !important;
+        }
+
+        @media (orientation: portrait) {
+            #rotatescreenWarn {
+                display: block;
+
+            }
+
+            #fullscreenToggled {
+                display: none;
+            }
+        }
+
+        @media (orientation: landscape) {
+            #rotatescreenWarn {
+                display: none;
+            }
+
+            #fullscreenToggled {
+                display: block;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="rotatescreenWarn">
+        <div class="center-text">
+            โปรดหมุนหน้าจอโทรศัพท์
+        </div>
+        <div id="rotateicon"></div>
+    </div>
+
+    <div id="fullscreenBtn" onclick="openFullscreen();"></div>
+    <div id="fullscreenToggled" onclick="openFullscreen();">
+        <canvas id="canvas">
+            เกมที่กำลังเล่นไม่รองรับในบราวเซอร์นี้<br />
+            กรุณาอัพเดทหรือใช้งานบราวเซอร์อื่น
+        </canvas>
+    </div>
+
+    <script src="$GODOT_URL"></script>
+    <script>
+        var engine = new Engine($GODOT_CONFIG);
+        engine.startGame();
+    </script>
+    <script>
+        var elem = document.getElementById("canvas");
+        function openFullscreen() {
+            if (elem.requestFullScreen) {
+                elem.requestFullScreen();
+            } else if (elem.webkitRequestFullScreen) {
+                elem.webkitRequestFullScreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            } else if (elem.webkitEnterFullscreen) {
+                elem.webkitEnterFullscreen(); //for iphone this code worked
+            }
+        }
+    </script>
+</body>
+
+</html>

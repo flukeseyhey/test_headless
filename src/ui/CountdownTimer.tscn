@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/ui/CountdownTimer.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/tank-battle.tres" type="DynamicFont" id=3]
+
+[node name="CountdownTimer" type="Control"]
+anchor_right = 1.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -71.75
+margin_right = 215.267
+margin_bottom = 216.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "5:00"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/tank-battle.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-31.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-32.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+func _ready():
+	$Username.text = str(DbSystem.username)
+	$Money.text = str(DbSystem.money)
+"
+
+[node name="UserInfo" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = -1921.0
+margin_bottom = -1080.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="bg_user_info" type="Sprite" parent="."]
+position = Vector2( 165, 61 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="bg_user_info2" type="Sprite" parent="."]
+position = Vector2( 199, 152.5 )
+scale = Vector2( 0.5, 0.446721 )
+texture = ExtResource( 3 )
+
+[node name="Username" type="Label" parent="."]
+margin_left = 89.0
+margin_top = 33.0
+margin_right = 889.0
+margin_bottom = 281.0
+rect_scale = Vector2( 0.25, 0.25 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "USERNAME"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="Label" parent="."]
+margin_left = 108.0
+margin_top = 109.0
+margin_right = 918.0
+margin_bottom = 325.0
+rect_scale = Vector2( 0.3, 0.4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "00000.0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

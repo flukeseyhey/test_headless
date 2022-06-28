@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/ui/PlayerStatus.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/fonts/tank-battle.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-80.png" type="Texture" id=4]
+
+[node name="PlayerStatus" type="HBoxContainer"]
+margin_right = 1552.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 1552, 216 )
+rect_scale = Vector2( 0.5, 0.5 )
+size_flags_vertical = 0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="Sprite" parent="."]
+position = Vector2( 808, 98 )
+scale = Vector2( 2.17259, 1.66576 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 50.0
+margin_bottom = 226.0
+rect_min_size = Vector2( 50, 0 )
+text = " "
+align = 1
+valign = 1
+
+[node name="HostIcon" type="TextureRect" parent="."]
+margin_left = 54.0
+margin_right = 204.0
+margin_bottom = 226.0
+rect_min_size = Vector2( 150, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="."]
+margin_left = 208.0
+margin_right = 554.0
+margin_bottom = 226.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "User"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 558.0
+margin_right = 608.0
+margin_bottom = 226.0
+rect_min_size = Vector2( 50, 0 )
+text = " "
+align = 1
+valign = 1
+
+[node name="StatusLabel" type="Label" parent="."]
+margin_left = 612.0
+margin_right = 1552.0
+margin_bottom = 226.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Connecting..."
+align = 1
+valign = 1

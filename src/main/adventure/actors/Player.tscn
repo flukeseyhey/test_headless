@@ -1,0 +1,345 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://src/main/adventure/weapons/Pistol.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/main/adventure/actors/Player.gd" type="Script" id=2]
+[ext_resource path="res://src/main/adventure/actors/BaseTank.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sounds/tank/lazer.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/tank/boost.mp3" type="AudioStream" id=5]
+[ext_resource path="res://src/main/adventure/actors/WeaponManager.gd" type="Script" id=6]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-70.png" type="Texture" id=7]
+[ext_resource path="res://src/objects/tank/TankHUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/main/adventure/UI/AdventureLayer.gd" type="Script" id=9]
+[ext_resource path="res://assets/fonts/tank-battle.tres" type="DynamicFont" id=10]
+[ext_resource path="res://src/objects/tank/PlayerInfo.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/sounds/tank/engine_heavy_fast_loop1.mp3" type="AudioStream" id=12]
+[ext_resource path="res://src/main/ui_menu/UserInfo.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/sounds/tank/engine_heavy_fast_loop.mp3" type="AudioStream" id=14]
+[ext_resource path="res://src/sound/MyAudioStreamPlayer2D.gd" type="Script" id=15]
+[ext_resource path="res://src/objects/tank/EngineSound.gd" type="Script" id=16]
+[ext_resource path="res://assets/sounds/tank/shoot.mp3" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/tank/insiv.mp3" type="AudioStream" id=18]
+[ext_resource path="res://assets/animation/countdown/8.png" type="Texture" id=23]
+[ext_resource path="res://assets/animation/countdown/3.png" type="Texture" id=24]
+[ext_resource path="res://assets/animation/countdown/9.png" type="Texture" id=25]
+[ext_resource path="res://assets/animation/countdown/1.png" type="Texture" id=26]
+[ext_resource path="res://assets/animation/countdown/11.png" type="Texture" id=27]
+[ext_resource path="res://assets/animation/countdown/4.png" type="Texture" id=28]
+[ext_resource path="res://assets/animation/countdown/10.png" type="Texture" id=29]
+[ext_resource path="res://assets/animation/countdown/15.png" type="Texture" id=30]
+[ext_resource path="res://assets/animation/countdown/6.png" type="Texture" id=31]
+[ext_resource path="res://assets/animation/countdown/2.png" type="Texture" id=32]
+[ext_resource path="res://assets/animation/countdown/7.png" type="Texture" id=33]
+[ext_resource path="res://assets/animation/countdown/14.png" type="Texture" id=34]
+[ext_resource path="res://assets/animation/countdown/12.png" type="Texture" id=35]
+[ext_resource path="res://assets/animation/countdown/5.png" type="Texture" id=36]
+[ext_resource path="res://assets/animation/countdown/13.png" type="Texture" id=37]
+
+[sub_resource type="Animation" id=1]
+resource_name = "muzzle_flash"
+length = 0.05
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("MuzzleFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MuzzleFlash:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MuzzleFlash:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 83, 0 ), Vector2( 90, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "reload"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0, 90.0, 90.0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_stop_reload"
+} ]
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 32 ), ExtResource( 24 ), ExtResource( 28 ), ExtResource( 36 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 29 ), ExtResource( 27 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 30 ) ],
+"loop": false,
+"name": "cooldown",
+"speed": 15.0
+} ]
+
+[node name="Player" groups=["obstacles", "player"] instance=ExtResource( 3 )]
+script = ExtResource( 2 )
+
+[node name="Team" parent="." index="6"]
+team = 1
+
+[node name="PlayerInfo" parent="." index="7" instance=ExtResource( 11 )]
+position = Vector2( 0, -130 )
+
+[node name="Background" parent="PlayerInfo" index="0"]
+margin_top = 30.0
+
+[node name="HBoxContainer" parent="PlayerInfo/Background/VBoxContainer" index="0"]
+visible = false
+
+[node name="Control" parent="PlayerInfo/Background/VBoxContainer" index="1"]
+margin_top = 0.0
+margin_bottom = 10.0
+
+[node name="BlackHealth" type="ColorRect" parent="PlayerInfo/Background/VBoxContainer/Control" index="0"]
+margin_right = 150.0
+margin_bottom = 30.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" parent="PlayerInfo/Background/VBoxContainer/Control" index="1"]
+margin_bottom = 30.0
+
+[node name="Label" type="Label" parent="PlayerInfo/Background/VBoxContainer/Control" index="2"]
+margin_left = -2.0
+margin_top = -8.0
+margin_right = 549.0
+margin_bottom = 208.0
+rect_scale = Vector2( 0.272777, 0.217697 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "100/100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShootSound" type="Node2D" parent="." index="8"]
+
+[node name="Lazer" type="AudioStreamPlayer" parent="ShootSound" index="0"]
+stream = ExtResource( 4 )
+volume_db = 4.0
+script = ExtResource( 15 )
+
+[node name="Normal" type="AudioStreamPlayer" parent="ShootSound" index="1"]
+stream = ExtResource( 17 )
+volume_db = -15.0
+bus = "Sound"
+script = ExtResource( 15 )
+
+[node name="SkillSound" type="Node2D" parent="." index="9"]
+
+[node name="Invis" type="AudioStreamPlayer" parent="SkillSound" index="0"]
+stream = ExtResource( 18 )
+volume_db = 11.0
+script = ExtResource( 15 )
+
+[node name="Boost" type="AudioStreamPlayer" parent="SkillSound" index="1"]
+stream = ExtResource( 5 )
+volume_db = 6.0
+script = ExtResource( 15 )
+
+[node name="EngineSound" type="Node2D" parent="." index="10"]
+script = ExtResource( 16 )
+
+[node name="Idle" type="AudioStreamPlayer" parent="EngineSound" index="0"]
+stream = ExtResource( 12 )
+volume_db = 24.0
+bus = "Tank Engine"
+script = ExtResource( 15 )
+attenuation = 0.0
+
+[node name="Fast" type="AudioStreamPlayer" parent="EngineSound" index="1"]
+stream = ExtResource( 14 )
+volume_db = -10.0
+pitch_scale = 2.11
+bus = "Tank Engine"
+script = ExtResource( 15 )
+
+[node name="Tween" type="Tween" parent="EngineSound" index="2"]
+
+[node name="CameraTransform" type="RemoteTransform2D" parent="." index="11"]
+
+[node name="WeaponManager" type="Node2D" parent="." index="12"]
+script = ExtResource( 6 )
+
+[node name="Pistol" parent="WeaponManager" index="0" instance=ExtResource( 1 )]
+
+[node name="Sprite" parent="WeaponManager/Pistol" index="0"]
+texture = null
+
+[node name="AnimationPlayer" parent="WeaponManager/Pistol" index="4"]
+anims/muzzle_flash = SubResource( 1 )
+anims/reload = SubResource( 2 )
+
+[node name="AdventureLayer" type="CanvasLayer" parent="." index="13"]
+script = ExtResource( 9 )
+
+[node name="TankHUD" parent="AdventureLayer" index="0" instance=ExtResource( 8 )]
+
+[node name="Cooldown" type="Node2D" parent="AdventureLayer/TankHUD" index="3"]
+
+[node name="SkillBoost" type="AnimatedSprite" parent="AdventureLayer/TankHUD/Cooldown" index="0"]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.392157 )
+position = Vector2( 1447, 925 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 3 )
+animation = "cooldown"
+frame = 14
+playing = true
+
+[node name="SkillZap" type="AnimatedSprite" parent="AdventureLayer/TankHUD/Cooldown" index="1"]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.392157 )
+position = Vector2( 1501, 684 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 3 )
+animation = "cooldown"
+frame = 14
+speed_scale = 0.5
+playing = true
+
+[node name="SkillInvisible" type="AnimatedSprite" parent="AdventureLayer/TankHUD/Cooldown" index="2"]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.392157 )
+position = Vector2( 1732, 626 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 3 )
+animation = "cooldown"
+frame = 14
+speed_scale = 0.2
+playing = true
+
+[node name="SkillPrice" type="Node2D" parent="AdventureLayer/TankHUD" index="4"]
+
+[node name="BoostLabel" type="Label" parent="AdventureLayer/TankHUD/SkillPrice" index="0"]
+margin_left = 1368.0
+margin_top = 764.0
+margin_right = 1654.0
+margin_bottom = 980.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "$0.0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ZapLabel" type="Label" parent="AdventureLayer/TankHUD/SkillPrice" index="1"]
+margin_left = 1426.0
+margin_top = 524.0
+margin_right = 1712.0
+margin_bottom = 740.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "$0.0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InvisibleLabel" type="Label" parent="AdventureLayer/TankHUD/SkillPrice" index="2"]
+margin_left = 1649.0
+margin_top = 459.0
+margin_right = 1935.0
+margin_bottom = 675.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "$0.0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserInfo" parent="AdventureLayer/TankHUD" index="5" instance=ExtResource( 13 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="MoneyGain" type="Node2D" parent="AdventureLayer/TankHUD/UserInfo" index="4"]
+position = Vector2( 1, 0 )
+
+[node name="Sprite" type="Sprite" parent="AdventureLayer/TankHUD/UserInfo/MoneyGain" index="0"]
+position = Vector2( 196, 236.875 )
+scale = Vector2( 0.675258, 0.647727 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="AdventureLayer/TankHUD/UserInfo/MoneyGain" index="1"]
+margin_left = 46.0
+margin_top = 201.0
+margin_right = 1056.0
+margin_bottom = 417.0
+rect_scale = Vector2( 0.3, 0.4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "000000.0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="tween_all_completed" from="EngineSound/Tween" to="EngineSound" method="_on_Tween_tween_all_completed"]
+[connection signal="press_boost_skill" from="AdventureLayer" to="." method="_on_AdventureLayer_press_boost_skill"]
+[connection signal="press_invis_skill" from="AdventureLayer" to="." method="_on_AdventureLayer_press_invis_skill"]
+[connection signal="press_zap_skill" from="AdventureLayer" to="." method="_on_AdventureLayer_press_zap_skill"]
+[connection signal="shoot" from="AdventureLayer" to="." method="_on_AdventureLayer_shoot"]
+[connection signal="pressed" from="AdventureLayer/TankHUD/ShootButton/Normal" to="AdventureLayer" method="_on_Shoot_pressed"]
+[connection signal="pressed" from="AdventureLayer/TankHUD/SkillButton/Boost" to="AdventureLayer" method="_on_SkillBoost_pressed"]
+[connection signal="pressed" from="AdventureLayer/TankHUD/SkillButton/Zap" to="AdventureLayer" method="_on_SkillZap_pressed"]
+[connection signal="pressed" from="AdventureLayer/TankHUD/SkillButton/Invisible" to="AdventureLayer" method="_on_SkillInvisible_pressed"]
+
+[editable path="Zap"]
+[editable path="PlayerInfo"]
+[editable path="WeaponManager/Pistol"]
+[editable path="AdventureLayer/TankHUD"]

@@ -1,0 +1,339 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://mods/core/TankNewMap/Greemap/land.png" type="Texture" id=1]
+[ext_resource path="res://mods/core/TankNewMap/eyip/bg2.png" type="Texture" id=2]
+[ext_resource path="res://mods/core/TankNewMap/eyip/bg.png" type="Texture" id=3]
+[ext_resource path="res://mods/core/TankNewMap/eyip/stones_3.png" type="Texture" id=4]
+[ext_resource path="res://src/components/maps/BaseMap.gd" type="Script" id=5]
+[ext_resource path="res://mods/core/TankNewMap/eyip/Geass.png" type="Texture" id=6]
+[ext_resource path="res://mods/core/TankNewMap/eyip/stones_10.png" type="Texture" id=7]
+[ext_resource path="res://mods/core/TankNewMap/eyip/stones_2.png" type="Texture" id=8]
+[ext_resource path="res://mods/core/TankNewMap/eyip/stones_11.png" type="Texture" id=9]
+[ext_resource path="res://mods/core/TankNewMap/eyip/decor_2.png" type="Texture" id=10]
+[ext_resource path="res://mods/core/TankNewMap/eyip/decor_1.png" type="Texture" id=11]
+[ext_resource path="res://mods/core/TankNewMap/eyip/building_1.png" type="Texture" id=12]
+[ext_resource path="res://mods/core/TankNewMap/eyip/Tree56.png" type="Texture" id=13]
+[ext_resource path="res://mods/core/TankNewMap/eyip/decor_8.png" type="Texture" id=14]
+[ext_resource path="res://mods/core/TankNewMap/eyip/Tree55.png" type="Texture" id=15]
+[ext_resource path="res://mods/core/TankNewMap/eyip/decor_5.png" type="Texture" id=16]
+[ext_resource path="res://mods/core/TankNewMap/eyip/greenery_9.png" type="Texture" id=17]
+[ext_resource path="res://mods/core/TankNewMap/eyip/stones_12.png" type="Texture" id=18]
+[ext_resource path="res://mods/core/TankNewMap/eyip/building_2.png" type="Texture" id=19]
+[ext_resource path="res://mods/core/TankNewMap/eyip/building_5.png" type="Texture" id=20]
+[ext_resource path="res://mods/core/TankNewMap/eyip/lake.png" type="Texture" id=21]
+[ext_resource path="res://mods/core/TankNewMap/eyip/Tree66.png" type="Texture" id=22]
+[ext_resource path="res://src/objects/DropCrateSpawnArea.tscn" type="PackedScene" id=23]
+
+[sub_resource type="TileSet" id=1]
+26/name = "land.png 26"
+26/texture = ExtResource( 1 )
+26/tex_offset = Vector2( 0, 0 )
+26/modulate = Color( 1, 1, 1, 1 )
+26/region = Rect2( 0, 0, 128, 128 )
+26/tile_mode = 0
+26/occluder_offset = Vector2( 0, 0 )
+26/navigation_offset = Vector2( 0, 0 )
+26/shape_offset = Vector2( 0, 0 )
+26/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+26/shape_one_way = false
+26/shape_one_way_margin = 0.0
+26/shapes = [  ]
+26/z_index = 0
+27/name = "bg2.png 27"
+27/texture = ExtResource( 2 )
+27/tex_offset = Vector2( 0, 0 )
+27/modulate = Color( 1, 1, 1, 1 )
+27/region = Rect2( 0, 0, 128, 128 )
+27/tile_mode = 0
+27/occluder_offset = Vector2( 0, 0 )
+27/navigation_offset = Vector2( 0, 0 )
+27/shape_offset = Vector2( 0, 0 )
+27/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+27/shape_one_way = false
+27/shape_one_way_margin = 0.0
+27/shapes = [  ]
+27/z_index = 0
+28/name = "bg.png 28"
+28/texture = ExtResource( 3 )
+28/tex_offset = Vector2( 0, 0 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 0, 0, 64, 64 )
+28/tile_mode = 0
+28/occluder_offset = Vector2( 0, 0 )
+28/navigation_offset = Vector2( 0, 0 )
+28/shape_offset = Vector2( 0, 0 )
+28/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+28/shape_one_way = false
+28/shape_one_way_margin = 0.0
+28/shapes = [  ]
+28/z_index = 0
+
+[node name="Eyip" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( 0, 27, 0, 1, 27, 0, 2, 27, 0, 3, 27, 0, 4, 27, 0, 5, 27, 0, 6, 27, 0, 7, 27, 0, 8, 27, 0, 9, 27, 0, 10, 27, 0, 11, 27, 0, 12, 27, 0, 13, 27, 0, 14, 27, 0, 15, 27, 0, 16, 27, 0, 17, 27, 0, 18, 27, 0, 19, 27, 0, 20, 27, 0, 21, 27, 0, 65536, 27, 0, 65537, 27, 0, 65538, 27, 0, 65539, 27, 0, 65540, 27, 0, 65541, 27, 0, 65542, 27, 0, 65543, 27, 0, 65544, 27, 0, 65545, 27, 0, 65546, 27, 0, 65547, 27, 0, 65548, 27, 0, 65549, 27, 0, 65550, 27, 0, 65551, 27, 0, 65552, 27, 0, 65553, 27, 0, 65554, 27, 0, 65555, 27, 0, 65556, 27, 0, 65557, 27, 0, 131072, 27, 0, 131073, 27, 0, 131074, 27, 0, 131075, 27, 0, 131076, 27, 0, 131077, 27, 0, 131078, 27, 0, 131079, 27, 0, 131080, 27, 0, 131081, 27, 0, 131082, 27, 0, 131083, 27, 0, 131084, 27, 0, 131085, 27, 0, 131086, 27, 0, 131087, 27, 0, 131088, 27, 0, 131089, 27, 0, 131090, 27, 0, 131091, 27, 0, 131092, 27, 0, 131093, 27, 0, 196608, 27, 0, 196609, 27, 0, 196610, 27, 0, 196611, 27, 0, 196612, 27, 0, 196613, 27, 0, 196614, 27, 0, 196615, 27, 0, 196616, 27, 0, 196617, 27, 0, 196618, 27, 0, 196619, 27, 0, 196620, 27, 0, 196621, 27, 0, 196622, 27, 0, 196623, 27, 0, 196624, 27, 0, 196625, 27, 0, 196626, 27, 0, 196627, 27, 0, 196628, 27, 0, 196629, 27, 0, 262144, 27, 0, 262145, 27, 0, 262146, 27, 0, 262147, 27, 0, 262148, 27, 0, 262149, 27, 0, 262150, 27, 0, 262151, 27, 0, 262152, 27, 0, 262153, 27, 0, 262154, 27, 0, 262155, 27, 0, 262156, 27, 0, 262157, 27, 0, 262158, 27, 0, 262159, 27, 0, 262160, 27, 0, 262161, 27, 0, 262162, 27, 0, 262163, 27, 0, 262164, 27, 0, 262165, 27, 0, 327680, 27, 0, 327681, 27, 0, 327682, 27, 0, 327683, 27, 0, 327684, 27, 0, 327685, 27, 0, 327686, 27, 0, 327687, 27, 0, 327688, 27, 0, 327689, 27, 0, 327690, 27, 0, 327691, 27, 0, 327692, 27, 0, 327693, 27, 0, 327694, 27, 0, 327695, 27, 0, 327696, 27, 0, 327697, 27, 0, 327698, 27, 0, 327699, 27, 0, 327700, 27, 0, 327701, 27, 0, 393216, 27, 0, 393217, 27, 0, 393218, 27, 0, 393219, 27, 0, 393220, 27, 0, 393221, 27, 0, 393222, 27, 0, 393223, 27, 0, 393224, 27, 0, 393225, 27, 0, 393226, 27, 0, 393227, 27, 0, 393228, 27, 0, 393229, 27, 0, 393230, 27, 0, 393231, 27, 0, 393232, 27, 0, 393233, 27, 0, 393234, 27, 0, 393235, 27, 0, 393236, 27, 0, 393237, 27, 0, 458752, 27, 0, 458753, 27, 0, 458754, 27, 0, 458755, 27, 0, 458756, 27, 0, 458757, 27, 0, 458758, 27, 0, 458759, 27, 0, 458760, 27, 0, 458761, 27, 0, 458762, 27, 0, 458763, 27, 0, 458764, 27, 0, 458765, 27, 0, 458766, 27, 0, 458767, 27, 0, 458768, 27, 0, 458769, 27, 0, 458770, 27, 0, 458771, 27, 0, 458772, 27, 0, 458773, 27, 0, 524288, 27, 0, 524289, 27, 0, 524290, 27, 0, 524291, 27, 0, 524292, 27, 0, 524293, 27, 0, 524294, 27, 0, 524295, 27, 0, 524296, 27, 0, 524297, 27, 0, 524298, 27, 0, 524299, 27, 0, 524300, 27, 0, 524301, 27, 0, 524302, 27, 0, 524303, 27, 0, 524304, 27, 0, 524305, 27, 0, 524306, 27, 0, 524307, 27, 0, 524308, 27, 0, 524309, 27, 0, 589824, 27, 0, 589825, 27, 0, 589826, 27, 0, 589827, 27, 0, 589828, 27, 0, 589829, 27, 0, 589830, 27, 0, 589831, 27, 0, 589832, 27, 0, 589833, 27, 0, 589834, 27, 0, 589835, 27, 0, 589836, 27, 0, 589837, 27, 0, 589838, 27, 0, 589839, 27, 0, 589840, 27, 0, 589841, 27, 0, 589842, 27, 0, 589843, 27, 0, 589844, 27, 0, 589845, 27, 0, 655360, 27, 0, 655361, 27, 0, 655362, 27, 0, 655363, 27, 0, 655364, 27, 0, 655365, 27, 0, 655366, 27, 0, 655367, 27, 0, 655368, 27, 0, 655369, 27, 0, 655370, 27, 0, 655371, 27, 0, 655372, 27, 0, 655373, 27, 0, 655374, 27, 0, 655375, 27, 0, 655376, 27, 0, 655377, 27, 0, 655378, 27, 0, 655379, 27, 0, 655380, 27, 0, 655381, 27, 0, 720896, 27, 0, 720897, 27, 0, 720898, 27, 0, 720899, 27, 0, 720900, 27, 0, 720901, 27, 0, 720902, 27, 0, 720903, 27, 0, 720904, 27, 0, 720905, 27, 0, 720906, 27, 0, 720907, 27, 0, 720908, 27, 0, 720909, 27, 0, 720910, 27, 0, 720911, 27, 0, 720912, 27, 0, 720913, 27, 0, 720914, 27, 0, 720915, 27, 0, 720916, 27, 0, 720917, 27, 0, 786432, 27, 0, 786433, 27, 0, 786434, 27, 0, 786435, 27, 0, 786436, 27, 0, 786437, 27, 0, 786438, 27, 0, 786439, 27, 0, 786440, 27, 0, 786441, 27, 0, 786442, 27, 0, 786443, 27, 0, 786444, 27, 0, 786445, 27, 0, 786446, 27, 0, 786447, 27, 0, 786448, 27, 0, 786449, 27, 0, 786450, 27, 0, 786451, 27, 0, 786452, 27, 0, 786453, 27, 0, 851968, 27, 0, 851969, 27, 0, 851970, 27, 0, 851971, 27, 0, 851972, 27, 0, 851973, 27, 0, 851974, 27, 0, 851975, 27, 0, 851976, 27, 0, 851977, 27, 0, 851978, 27, 0, 851979, 27, 0, 851980, 27, 0, 851981, 27, 0, 851982, 27, 0, 851983, 27, 0, 851984, 27, 0, 851985, 27, 0, 851986, 27, 0, 851987, 27, 0, 851988, 27, 0, 851989, 27, 0, 917504, 27, 0, 917505, 27, 0, 917506, 27, 0, 917507, 27, 0, 917508, 27, 0, 917509, 27, 0, 917510, 27, 0, 917511, 27, 0, 917512, 27, 0, 917513, 27, 0, 917514, 27, 0, 917515, 27, 0, 917516, 27, 0, 917517, 27, 0, 917518, 27, 0, 917519, 27, 0, 917520, 27, 0, 917521, 27, 0, 917522, 27, 0, 917523, 27, 0, 917524, 27, 0, 917525, 27, 0 )
+
+[node name="PlayerStartPositions" type="Node2D" parent="."]
+
+[node name="Player1" type="Position2D" parent="PlayerStartPositions"]
+position = Vector2( 371, 322 )
+rotation = 0.643801
+
+[node name="Player2" type="Position2D" parent="PlayerStartPositions"]
+position = Vector2( 2295, 1511 )
+rotation = -2.28443
+
+[node name="Player3" type="Position2D" parent="PlayerStartPositions"]
+position = Vector2( 2355.49, 348.476 )
+rotation = 2.21715
+
+[node name="Player4" type="Position2D" parent="PlayerStartPositions"]
+position = Vector2( 394, 1583 )
+rotation = -0.922228
+
+[node name="Player5" type="Position2D" parent="PlayerStartPositions"]
+position = Vector2( 1341, 1548 )
+rotation = 0.643801
+
+[node name="Player6" type="Position2D" parent="PlayerStartPositions"]
+position = Vector2( 1375, 356 )
+rotation = 0.643801
+
+[node name="Object" type="Node2D" parent="."]
+
+[node name="Bg" type="Sprite" parent="Object"]
+position = Vector2( 620, 970 )
+scale = Vector2( 0.942051, 0.942051 )
+texture = ExtResource( 6 )
+
+[node name="Bg2" type="Sprite" parent="Object"]
+position = Vector2( 2217, 940 )
+scale = Vector2( 0.942051, 0.942051 )
+texture = ExtResource( 6 )
+
+[node name="Stone" type="Node2D" parent="Object"]
+
+[node name="Stone11_1" type="Sprite" parent="Object/Stone"]
+position = Vector2( 1929.01, 1078 )
+scale = Vector2( 0.752488, 0.80005 )
+texture = ExtResource( 9 )
+offset = Vector2( 1010.57, 820.719 )
+
+[node name="Stone10_2" type="Sprite" parent="Object/Stone"]
+position = Vector2( 108, 1706 )
+scale = Vector2( 0.878846, 0.878846 )
+texture = ExtResource( 7 )
+
+[node name="Stone12_1" type="Sprite" parent="Object/Stone"]
+position = Vector2( 335, 11 )
+rotation = -0.299409
+texture = ExtResource( 18 )
+
+[node name="Stone10_3" type="Sprite" parent="Object/Stone"]
+position = Vector2( 2547, 85.9999 )
+scale = Vector2( 0.878846, 0.878846 )
+texture = ExtResource( 7 )
+
+[node name="Stone13_4" type="Sprite" parent="Object/Stone"]
+position = Vector2( 1199, 939 )
+scale = Vector2( 0.685032, 0.700094 )
+texture = ExtResource( 4 )
+
+[node name="Stone13_5" type="Sprite" parent="Object/Stone"]
+position = Vector2( 1574, 1178 )
+scale = Vector2( 0.667866, 0.68255 )
+texture = ExtResource( 4 )
+
+[node name="Stone13_6" type="Sprite" parent="Object/Stone"]
+position = Vector2( 1531, 715 )
+scale = Vector2( 0.614742, 0.628258 )
+texture = ExtResource( 8 )
+
+[node name="Stone14_1" type="Sprite" parent="Object/Stone"]
+position = Vector2( 1225, 1108 )
+scale = Vector2( 0.781356, 0.726044 )
+texture = ExtResource( 8 )
+
+[node name="Stone14_2" type="Sprite" parent="Object/Stone"]
+position = Vector2( 1754, 837 )
+scale = Vector2( 0.781356, 0.726044 )
+texture = ExtResource( 4 )
+
+[node name="builbdings" type="Node2D" parent="Object"]
+
+[node name="builbdings_5" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 2525, 1511 )
+scale = Vector2( 0.58871, 0.58871 )
+texture = ExtResource( 10 )
+
+[node name="Piramid2" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 1459, 927 )
+scale = Vector2( 1.37479, 1.37479 )
+texture = ExtResource( 11 )
+
+[node name="builbdings_6" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 2120, 68 )
+scale = Vector2( 0.469805, 0.469805 )
+texture = ExtResource( 19 )
+
+[node name="builbdings_7" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 1924, 1386 )
+scale = Vector2( 0.477742, 0.477742 )
+texture = ExtResource( 19 )
+
+[node name="builbdings_1" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 2139, 869 )
+scale = Vector2( 0.413338, 0.424133 )
+texture = ExtResource( 12 )
+
+[node name="builbdings_2" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 742, 1282 )
+scale = Vector2( 0.423989, 0.435063 )
+texture = ExtResource( 12 )
+
+[node name="Car" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 2159, 1751 )
+scale = Vector2( 0.497352, 0.497352 )
+texture = ExtResource( 14 )
+
+[node name="builbdings_8" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 1804, 446 )
+scale = Vector2( 0.58871, 0.58871 )
+texture = ExtResource( 10 )
+
+[node name="Car2" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 1903, 477 )
+scale = Vector2( 0.497352, 0.497352 )
+texture = ExtResource( 14 )
+
+[node name="builbdings_3" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 769, 583 )
+scale = Vector2( 0.49832, 0.511335 )
+texture = ExtResource( 20 )
+
+[node name="lake" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 1350, 211 )
+scale = Vector2( 0.871002, 0.871002 )
+texture = ExtResource( 21 )
+
+[node name="Sprite" type="Sprite" parent="Object/builbdings/lake"]
+position = Vector2( 126.467, 74.1858 )
+scale = Vector2( 0.380064, 0.380064 )
+texture = ExtResource( 16 )
+
+[node name="builbdings_9" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 746, 72.0001 )
+scale = Vector2( 0.469805, 0.469805 )
+texture = ExtResource( 19 )
+
+[node name="builbdings_10" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 1832, 1838 )
+scale = Vector2( 0.469805, 0.469805 )
+texture = ExtResource( 19 )
+
+[node name="builbdings_4" type="Sprite" parent="Object/builbdings"]
+position = Vector2( 2043, 1801 )
+scale = Vector2( 0.49832, 0.511335 )
+texture = ExtResource( 20 )
+
+[node name="Tree" type="Node2D" parent="Object"]
+
+[node name="Tree" type="Sprite" parent="Object/Tree"]
+position = Vector2( 371, 493 )
+texture = ExtResource( 15 )
+
+[node name="Tree2" type="Sprite" parent="Object/Tree"]
+position = Vector2( 2771, 441 )
+texture = ExtResource( 13 )
+
+[node name="Tree3" type="Sprite" parent="Object/Tree"]
+position = Vector2( -52, 1233 )
+texture = ExtResource( 13 )
+
+[node name="Tree4" type="Sprite" parent="Object/Tree"]
+position = Vector2( 1775, 1036 )
+texture = ExtResource( 17 )
+
+[node name="Tree5" type="Sprite" parent="Object/Tree"]
+position = Vector2( 1202, 756 )
+texture = ExtResource( 17 )
+
+[node name="Tree6" type="Sprite" parent="Object/Tree"]
+position = Vector2( 2853, 1328 )
+texture = ExtResource( 13 )
+
+[node name="Tree7" type="Sprite" parent="Object/Tree"]
+position = Vector2( 1289, 1994 )
+texture = ExtResource( 13 )
+
+[node name="Tree8" type="Sprite" parent="Object/Tree"]
+position = Vector2( 684, 1755 )
+scale = Vector2( 0.77475, 0.7975 )
+texture = ExtResource( 22 )
+
+[node name="Tree9" type="Sprite" parent="Object/Tree"]
+position = Vector2( 2827, 586 )
+scale = Vector2( 0.77475, 0.7975 )
+texture = ExtResource( 22 )
+
+[node name="Tree10" type="Sprite" parent="Object/Tree"]
+position = Vector2( 2827, 784 )
+scale = Vector2( 0.77475, 0.7975 )
+texture = ExtResource( 22 )
+
+[node name="Tree11" type="Sprite" parent="Object/Tree"]
+position = Vector2( 1735, -18 )
+scale = Vector2( 0.77475, 0.7975 )
+texture = ExtResource( 22 )
+
+[node name="Tree12" type="Sprite" parent="Object/Tree"]
+position = Vector2( 1132, -16 )
+scale = Vector2( 0.77475, 0.7975 )
+texture = ExtResource( 22 )
+
+[node name="Hitbox" type="Node2D" parent="Object"]
+
+[node name="top" type="StaticBody2D" parent="Object/Hitbox"]
+collision_mask = 6
+
+[node name="Sprite" type="Sprite" parent="Object/Hitbox/top"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Object/Hitbox/top"]
+position = Vector2( -10, 2 )
+polygon = PoolVector2Array( -1, -9, 374, 194, 333, 220, 297, 257, 295, 296, 267, 317, 263, 352, 273, 422, 261, 455, 273, 501, 302, 543, 309, 587, 302, 632, 263, 675, 221, 707, 195, 773, 171, 830, 171, 879, 230, 901, 325, 933, 357, 966, 362, 992, 349, 1013, 327, 1040, 303, 1064, 274, 1117, 287, 1201, 281, 1371, 215, 1461, 255, 1550, 327, 1580, 333, 1639, 357, 1669, 393, 1704, 442, 1705, 497, 1685, 523, 1660, 559, 1628, 585, 1612, 652, 1595, 707, 1614, 779, 1642, 819, 1676, 882, 1685, 944, 1687, 1003, 1696, 1052, 1683, 1101, 1677, 1153, 1668, 1205, 1644, 1268, 1637, 1339, 1622, 1406, 1615, 1476, 1641, 1519, 1672, 1559, 1692, 1600, 1688, 1630, 1713, 1693, 1735, 1747, 1749, 1831, 1744, 1895, 1738, 1936, 1709, 1969, 1671, 1996, 1671, 2117, 1675, 2197, 1694, 2263, 1675, 2331, 1616, 2406, 1563, 2444, 1530, 2488, 1474, 2529, 1433, 2556, 1465, 2595, 1451, 2612, 1430, 2635, 1394, 2639, 1311, 2639, 1242, 2618, 1177, 2571, 1136, 2554, 1115, 2543, 1075, 2548, 1060, 2565, 1035, 2613, 988, 2618, 967, 2602, 904, 2539, 848, 2549, 782, 2577, 725, 2542, 675, 2538, 633, 2546, 589, 2563, 556, 2556, 503, 2560, 396, 2533, 337, 2500, 314, 2452, 299, 2427, 293, 2408, 255, 2392, 233, 2358, 209, 2323, 194, 2286, 191, 2263, 187, 2248, 182, 2201, 142, 1980, 132, 1943, 131, 1860, 127, 1760, 141, 1663, 122, 1616, 152, 1578, 227, 1512, 265, 1382, 280, 1274, 273, 1165, 246, 1129, 212, 1027, 139, 946, 124, 871, 141, 605, 135, 541, 130, 475, 162, 422, 197, 380, 198, 371, 190, 2, -13, -9, -51, 15, -98, 74, -198, 177, -282, 314, -324, 532, -389, 596, -363, 668, -259, 688, -165, 763, -224, 866, -206, 944, -161, 1014, -244, 1126, -248, 1178, -185, 1290, -158, 1389, -131, 1537, -147, 1613, -237, 1730, -253, 1800, -190, 1910, -154, 2015, -125, 2106, -164, 2295, -156, 2451, -183, 2633, -186, 2783, -174, 2936, -96, 3075, -28, 3175, 180, 3103, 300, 3115, 584, 3115, 800, 3261, 909, 3267, 1080, 3183, 1228, 3183, 1480, 3236, 1597, 3151, 1728, 2901, 2124, 1732, 2135, 1599, 2188, 1095, 2160, 927, 2117, -14, 2074, -181, 1788, -150, 1572, -160, 1394, -253, 1356, -353, 952, -164, 806, -157, 599, -121, 207, -82, 155, -92, 81 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Object/Hitbox"]
+collision_mask = 6
+
+[node name="Sprite" type="Sprite" parent="Object/Hitbox/StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Object/Hitbox/StaticBody2D"]
+polygon = PoolVector2Array( 1252, 1063, 1238, 979, 1238, 903, 1238, 884, 1263, 865, 1351, 801, 1362, 789, 1372, 780, 1384, 769, 1395, 761, 1405, 752, 1415, 746, 1422, 740, 1433, 733, 1437, 729, 1444, 727, 1454, 730, 1459, 734, 1547, 801, 1616, 853, 1657, 883, 1656, 964, 1656, 1055, 1652, 1067, 1611, 1071, 1543, 1072, 1433, 1075, 1393, 1072, 1323, 1073, 1266, 1072 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Object/Hitbox/StaticBody2D"]
+polygon = PoolVector2Array( 692, 689, 695, 568, 667, 538, 670, 478, 694, 453, 844, 455, 869, 482, 871, 537, 845, 566, 844, 695, 695, 698 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Object/Hitbox/StaticBody2D"]
+position = Vector2( -69, -3 )
+polygon = PoolVector2Array( 1821, 512, 1814, 509, 1816, 467, 1830, 454, 1840, 435, 1849, 415, 1861, 392, 1875, 367, 1895, 408, 1906, 423, 1924, 431, 1937, 435, 1954, 442, 2010, 443, 2022, 439, 2035, 436, 2042, 438, 2049, 454, 2042, 476, 2031, 501, 1934, 502, 1924, 514 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Object/Hitbox/StaticBody2D"]
+polygon = PoolVector2Array( 2029, 970, 2030, 754, 2236, 753, 2237, 971 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Object/Hitbox/StaticBody2D"]
+polygon = PoolVector2Array( 1782, 1456, 1779, 1361, 1823, 1296, 2050, 1296, 2053, 1455 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Object/Hitbox/StaticBody2D"]
+polygon = PoolVector2Array( 631, 1166, 630, 1387, 841, 1385, 842, 1164 )
+
+[node name="DropCrateSpawnArea" parent="." instance=ExtResource( 23 )]
+position = Vector2( 804, 944 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="DropCrateSpawnArea2" parent="." instance=ExtResource( 23 )]
+position = Vector2( 2119, 964 )
+scale = Vector2( 1.5, 1.5 )

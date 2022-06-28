@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/main/match_setup/CountdownTimer.gd" type="Script" id=2]
+[ext_resource path="res://assets/animation/find-match/find-1.png" type="Texture" id=3]
+[ext_resource path="res://assets/animation/find-match/find-4.png" type="Texture" id=4]
+[ext_resource path="res://assets/animation/find-match/find-2.png" type="Texture" id=5]
+[ext_resource path="res://assets/animation/find-match/find-3.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "find_match"
+length = 0.85
+loop = true
+
+[sub_resource type="Animation" id=2]
+resource_name = "pic_find_match"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("FindMatch:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FindMatch:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24, -8 ), Vector2( 22, -8 ), Vector2( 20, -8 ), Vector2( 18, -8 ), Vector2( 18, -8 ) ]
+}
+
+[node name="CountdownTimer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FindMatch" type="TextureRect" parent="."]
+margin_left = 18.0
+margin_right = 250.0
+margin_bottom = 56.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/find_match = SubResource( 1 )
+anims/pic_find_match = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

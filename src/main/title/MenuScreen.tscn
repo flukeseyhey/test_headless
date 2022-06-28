@@ -1,0 +1,534 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://src/main/title/MenuScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-59.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level-26.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-29.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tanklogo4-54.png" type="Texture" id=6]
+[ext_resource path="res://src/main/ui_menu/UserInfo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/main/adventure/BetSetup.gd" type="Script" id=8]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-18.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level-262.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level-23.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level-24.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level-242.png" type="Texture" id=13]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level-232.png" type="Texture" id=14]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-25.png" type="Texture" id=15]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-20.png" type="Texture" id=16]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-19.png" type="Texture" id=17]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-27.png" type="Texture" id=18]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-28.png" type="Texture" id=19]
+[ext_resource path="res://src/ui/UILayer.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-58.png" type="Texture" id=21]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-30.png" type="Texture" id=22]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit--92.png" type="Texture" id=23]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-53.png" type="Texture" id=24]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level2-132.png" type="Texture" id=25]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level2-122.png" type="Texture" id=26]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level2-12.png" type="Texture" id=27]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level-25.png" type="Texture" id=28]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level-252.png" type="Texture" id=29]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level-27.png" type="Texture" id=30]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level-272.png" type="Texture" id=31]
+[ext_resource path="res://src/ui/GameInfo.tscn" type="PackedScene" id=32]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level2-14.png" type="Texture" id=33]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level2-142.png" type="Texture" id=34]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit-levelcard/level2-13.png" type="Texture" id=35]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-92.png" type="Texture" id=36]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-17.png" type="Texture" id=37]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-52.png" type="Texture" id=38]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-89.png" type="Texture" id=39]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-91.png" type="Texture" id=40]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tanktext-55.png" type="Texture" id=41]
+[ext_resource path="res://assets/fonts/tank-battle.tres" type="DynamicFont" id=42]
+[ext_resource path="res://assets/ui/tank-edit/tank-edit/tankui-edit-90.png" type="Texture" id=43]
+
+[node name="MenuScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screens" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="TextureRect" parent="Screens"]
+margin_right = 1921.0
+margin_bottom = 1082.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Fram" type="TextureRect" parent="Screens/MainMenu"]
+margin_left = 23.98
+margin_top = 174.981
+margin_right = 1944.98
+margin_bottom = 1255.98
+rect_scale = Vector2( 0.955397, 0.958279 )
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LogoTankBattle" type="TextureRect" parent="Screens/MainMenu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -560.833
+margin_top = 15.9074
+margin_right = 551.167
+margin_bottom = 515.908
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuItem" type="TextureRect" parent="Screens/MainMenu"]
+margin_left = 431.641
+margin_top = 405.638
+margin_right = 2079.64
+margin_bottom = 1486.63
+rect_scale = Vector2( 0.653315, 0.560259 )
+texture = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AdventureButton" type="TouchScreenButton" parent="Screens/MainMenu/MenuItem"]
+position = Vector2( 293.642, 170.357 )
+scale = Vector2( 1.44954, 1.45102 )
+normal = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Screens/MainMenu/MenuItem/AdventureButton"]
+margin_left = 179.004
+margin_top = 45.4125
+margin_right = 638.004
+margin_bottom = 215.413
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OnlineButton" type="TouchScreenButton" parent="Screens/MainMenu/MenuItem"]
+position = Vector2( 293.642, 553.66 )
+scale = Vector2( 1.45, 1.451 )
+normal = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Screens/MainMenu/MenuItem/OnlineButton"]
+margin_left = 102.943
+margin_top = 24.8102
+margin_right = 761.943
+margin_bottom = 256.81
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AdventureMode" type="TextureRect" parent="Screens"]
+visible = false
+margin_right = 1921.0
+margin_bottom = 1081.0
+texture = ExtResource( 37 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Mode" type="Node2D" parent="Screens/AdventureMode"]
+
+[node name="Sprite" type="Sprite" parent="Screens/AdventureMode/Mode"]
+position = Vector2( 312, 96 )
+scale = Vector2( 0.314982, 0.640268 )
+texture = ExtResource( 22 )
+
+[node name="Sprite2" type="Sprite" parent="Screens/AdventureMode/Mode"]
+position = Vector2( 936, 632 )
+scale = Vector2( 1.01642, 1.02692 )
+texture = ExtResource( 17 )
+
+[node name="Sprite3" type="Sprite" parent="Screens/AdventureMode/Mode"]
+position = Vector2( 952, 624 )
+scale = Vector2( 0.696706, 0.621201 )
+texture = ExtResource( 38 )
+
+[node name="LevelButton" type="TouchScreenButton" parent="Screens/AdventureMode/Mode"]
+position = Vector2( 595, 395 )
+normal = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Screens/AdventureMode/Mode/LevelButton"]
+margin_left = 107.0
+margin_top = 23.0
+margin_right = 766.0
+margin_bottom = 234.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 39 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndlessButton" type="TouchScreenButton" parent="Screens/AdventureMode/Mode"]
+position = Vector2( 595, 632 )
+normal = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Screens/AdventureMode/Mode/EndlessButton"]
+margin_left = 107.0
+margin_top = 33.0
+margin_right = 766.0
+margin_bottom = 246.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 43 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DifficultyLevel" type="Node2D" parent="Screens/AdventureMode"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="Screens/AdventureMode/DifficultyLevel"]
+position = Vector2( 936, 632 )
+scale = Vector2( 1.27442, 0.954453 )
+texture = ExtResource( 17 )
+
+[node name="Easy" type="TouchScreenButton" parent="Screens/AdventureMode/DifficultyLevel"]
+position = Vector2( 416, 344 )
+scale = Vector2( 1.32687, 1.34695 )
+normal = ExtResource( 27 )
+pressed = ExtResource( 26 )
+
+[node name="Normal" type="TouchScreenButton" parent="Screens/AdventureMode/DifficultyLevel"]
+position = Vector2( 787.79, 344 )
+scale = Vector2( 1.327, 1.347 )
+normal = ExtResource( 35 )
+pressed = ExtResource( 25 )
+
+[node name="Hard" type="TouchScreenButton" parent="Screens/AdventureMode/DifficultyLevel"]
+position = Vector2( 1160, 344 )
+scale = Vector2( 1.327, 1.347 )
+normal = ExtResource( 33 )
+pressed = ExtResource( 34 )
+
+[node name="BetSetup" type="Node2D" parent="Screens/AdventureMode"]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Screens/AdventureMode/BetSetup"]
+position = Vector2( 936, 624 )
+scale = Vector2( 1.00633, 1.0235 )
+texture = ExtResource( 17 )
+
+[node name="Money" type="Sprite" parent="Screens/AdventureMode/BetSetup"]
+position = Vector2( 950.164, 505.868 )
+scale = Vector2( 0.590782, 0.725271 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Screens/AdventureMode/BetSetup/Money"]
+margin_left = -823.0
+margin_top = -121.0
+margin_right = 159.0
+margin_bottom = 120.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 42 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectMoney" type="TouchScreenButton" parent="Screens/AdventureMode/BetSetup"]
+position = Vector2( 1040.13, 428.074 )
+scale = Vector2( 0.517122, 0.677591 )
+normal = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="Screens/AdventureMode/BetSetup/SelectMoney"]
+margin_left = 138.981
+margin_top = 48.5927
+margin_right = 1003.98
+margin_bottom = 264.593
+rect_scale = Vector2( 0.538004, 0.538004 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "เลือกจำนวนเงิน"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="TouchScreenButton" parent="Screens/AdventureMode/BetSetup"]
+position = Vector2( 624, 656 )
+scale = Vector2( 0.878557, 0.848567 )
+normal = ExtResource( 19 )
+
+[node name="Sprite" type="Sprite" parent="Screens/AdventureMode/BetSetup/StartButton"]
+position = Vector2( 355.128, 103.704 )
+texture = ExtResource( 41 )
+
+[node name="MoneyFrame" type="TextureRect" parent="Screens/AdventureMode"]
+visible = false
+anchor_left = 0.233212
+anchor_top = 0.236818
+anchor_right = 0.794575
+anchor_bottom = 0.85315
+margin_right = 823.625
+margin_bottom = 632.053
+rect_scale = Vector2( 0.56697, 0.513172 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Screens/AdventureMode/MoneyFrame"]
+position = Vector2( 882.003, 693.678 )
+scale = Vector2( 1.17336, 1.31449 )
+texture = ExtResource( 38 )
+
+[node name="Sprite2" type="Sprite" parent="Screens/AdventureMode/MoneyFrame"]
+position = Vector2( 874.826, 0 )
+scale = Vector2( 1.30459, 1.11709 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Screens/AdventureMode/MoneyFrame/Sprite2"]
+margin_left = -327.176
+margin_top = -73.2657
+margin_right = 1055.82
+margin_bottom = 152.734
+rect_scale = Vector2( 0.474593, 0.599978 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "กรุณาเลือกจำนวนเงิน"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="TouchScreenButton" parent="Screens/AdventureMode/MoneyFrame"]
+position = Vector2( 310.422, 155.893 )
+scale = Vector2( 1.00243, 1.01225 )
+normal = ExtResource( 21 )
+
+[node name="1" type="Label" parent="Screens/AdventureMode/MoneyFrame/1"]
+margin_left = 225.214
+margin_top = 127.056
+margin_right = 308.214
+margin_bottom = 343.056
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="TouchScreenButton" parent="Screens/AdventureMode/MoneyFrame"]
+position = Vector2( 931.267, 155.893 )
+scale = Vector2( 1.002, 1.012 )
+normal = ExtResource( 21 )
+
+[node name="2" type="Label" parent="Screens/AdventureMode/MoneyFrame/2"]
+margin_left = 228.83
+margin_top = 127.087
+margin_right = 311.83
+margin_bottom = 343.087
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="TouchScreenButton" parent="Screens/AdventureMode/MoneyFrame"]
+position = Vector2( 310.422, 717.109 )
+scale = Vector2( 1.002, 1.012 )
+normal = ExtResource( 21 )
+
+[node name="5" type="Label" parent="Screens/AdventureMode/MoneyFrame/5"]
+margin_left = 232.352
+margin_top = 138.64
+margin_right = 315.352
+margin_bottom = 354.64
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "5"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="10" type="TouchScreenButton" parent="Screens/AdventureMode/MoneyFrame"]
+position = Vector2( 931.267, 717.109 )
+scale = Vector2( 1.002, 1.012 )
+normal = ExtResource( 21 )
+
+[node name="10" type="Label" parent="Screens/AdventureMode/MoneyFrame/10"]
+margin_left = 190.105
+margin_top = 134.789
+margin_right = 356.105
+margin_bottom = 350.789
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OnlineMode" type="TextureRect" parent="Screens"]
+visible = false
+margin_right = 1921.0
+margin_bottom = 1081.0
+texture = ExtResource( 37 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Screens/OnlineMode"]
+position = Vector2( 936, 600 )
+scale = Vector2( 1.48262, 1.02679 )
+texture = ExtResource( 17 )
+
+[node name="5BathButton" type="TouchScreenButton" parent="Screens/OnlineMode"]
+position = Vector2( 136, 336 )
+scale = Vector2( 1.25, 1.25 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 14 )
+
+[node name="10BathButton" type="TouchScreenButton" parent="Screens/OnlineMode"]
+position = Vector2( 472, 336 )
+scale = Vector2( 1.25, 1.25 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 13 )
+
+[node name="20BathButton" type="TouchScreenButton" parent="Screens/OnlineMode"]
+position = Vector2( 808, 337.667 )
+scale = Vector2( 1.25, 1.25 )
+normal = ExtResource( 28 )
+pressed = ExtResource( 29 )
+
+[node name="50BathButton" type="TouchScreenButton" parent="Screens/OnlineMode"]
+position = Vector2( 1144, 336 )
+scale = Vector2( 1.25, 1.25 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 10 )
+
+[node name="100BathButton" type="TouchScreenButton" parent="Screens/OnlineMode"]
+position = Vector2( 1472, 336 )
+scale = Vector2( 1.25, 1.25 )
+normal = ExtResource( 30 )
+pressed = ExtResource( 31 )
+
+[node name="UILayer" parent="." instance=ExtResource( 20 )]
+
+[node name="GameInfo" parent="UILayer/Screens" index="0" instance=ExtResource( 32 )]
+visible = false
+
+[node name="InfoButton" parent="UILayer/Overlay/HBoxContainer" index="0"]
+visible = true
+margin_left = 1626.0
+margin_right = 1759.0
+margin_bottom = 232.0
+
+[node name="SettingButton" parent="UILayer/Overlay/HBoxContainer" index="1"]
+visible = true
+margin_bottom = 232.0
+
+[node name="Alert" parent="UILayer/Overlay" index="3"]
+margin_left = -492.0
+margin_right = 1913.0
+margin_bottom = 852.387
+
+[node name="BgErrorMessage" type="TextureRect" parent="UILayer/Overlay" index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 23 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorMessage" type="Label" parent="UILayer/Overlay/BgErrorMessage"]
+anchor_left = 0.233333
+anchor_top = 0.2
+anchor_right = 0.766667
+anchor_bottom = 0.844444
+margin_right = 1536.0
+margin_bottom = 1044.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = ExtResource( 42 )
+text = "เกมเกิดข้อผิดพลาดไม่ทราบสาเหตุ กรุณารีเฟรชใหม่อีกครั้ง"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="UIButton" type="TouchScreenButton" parent="UILayer/Overlay" index="5"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 1768, 30 )
+normal = ExtResource( 16 )
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/Overlay" index="6"]
+margin_left = -93.0
+margin_top = -68.0
+margin_right = 478.0
+margin_bottom = 274.0
+texture = ExtResource( 22 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserInfo" parent="UILayer/Overlay" index="7" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+script = null
+
+[connection signal="pressed" from="Screens/MainMenu/MenuItem/AdventureButton" to="." method="_on_AdventureButton_pressed"]
+[connection signal="pressed" from="Screens/MainMenu/MenuItem/OnlineButton" to="." method="_on_OnlineButton_pressed"]
+[connection signal="pressed" from="Screens/AdventureMode/Mode/LevelButton" to="." method="_on_LevelButton_pressed"]
+[connection signal="pressed" from="Screens/AdventureMode/Mode/EndlessButton" to="." method="_on_EndlessButton_pressed"]
+[connection signal="pressed" from="Screens/AdventureMode/DifficultyLevel/Easy" to="." method="_on_Easy_pressed"]
+[connection signal="pressed" from="Screens/AdventureMode/DifficultyLevel/Normal" to="." method="_on_Normal_pressed"]
+[connection signal="pressed" from="Screens/AdventureMode/DifficultyLevel/Hard" to="." method="_on_Hard_pressed"]
+[connection signal="pressed" from="Screens/AdventureMode/BetSetup/SelectMoney" to="." method="_on_SelectMoney_pressed"]
+[connection signal="pressed" from="Screens/AdventureMode/BetSetup/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="select_money" from="Screens/AdventureMode/MoneyFrame" to="." method="_on_MoneyFrame_select_money"]
+[connection signal="pressed" from="Screens/AdventureMode/MoneyFrame/1" to="Screens/AdventureMode/MoneyFrame" method="_on_1_pressed"]
+[connection signal="pressed" from="Screens/AdventureMode/MoneyFrame/2" to="Screens/AdventureMode/MoneyFrame" method="_on_2_pressed"]
+[connection signal="pressed" from="Screens/AdventureMode/MoneyFrame/5" to="Screens/AdventureMode/MoneyFrame" method="_on_5_pressed"]
+[connection signal="pressed" from="Screens/AdventureMode/MoneyFrame/10" to="Screens/AdventureMode/MoneyFrame" method="_on_10_pressed"]
+[connection signal="pressed" from="Screens/OnlineMode/5BathButton" to="." method="_on_5BathButton_pressed"]
+[connection signal="pressed" from="Screens/OnlineMode/10BathButton" to="." method="_on_10BathButton_pressed"]
+[connection signal="pressed" from="Screens/OnlineMode/20BathButton" to="." method="_on_20BathButton_pressed"]
+[connection signal="pressed" from="Screens/OnlineMode/50BathButton" to="." method="_on_50BathButton_pressed"]
+[connection signal="pressed" from="Screens/OnlineMode/100BathButton" to="." method="_on_100BathButton_pressed"]
+[connection signal="info_button" from="UILayer" to="." method="_on_UILayer_info_button"]
+[connection signal="released" from="UILayer/Overlay/UIButton" to="." method="_on_UIButton_released"]
+
+[editable path="UILayer"]

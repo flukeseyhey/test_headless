@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zap_2.mp3-a72dc8f6e9ebc298fcbf0419b125784f.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/tank/zap_2.mp3"
+dest_files=[ "res://.import/zap_2.mp3-a72dc8f6e9ebc298fcbf0419b125784f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

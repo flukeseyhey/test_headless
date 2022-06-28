@@ -1,0 +1,50 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/Tank_Destroyed.png" type="Texture" id=1]
+[ext_resource path="res://assets/animation/smoke-explosion/explosionSmoke5.png" type="Texture" id=2]
+[ext_resource path="res://src/main/adventure/actors/TankDestroy.gd" type="Script" id=3]
+[ext_resource path="res://assets/animation/smoke-explosion/Tank_Explosion_5.png" type="Texture" id=4]
+[ext_resource path="res://assets/animation/smoke-explosion/Tank_Explosion_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/animation/smoke-explosion/Tank_Explosion_6.png" type="Texture" id=6]
+[ext_resource path="res://assets/animation/smoke-explosion/Tank_Explosion_3.png" type="Texture" id=7]
+[ext_resource path="res://assets/animation/smoke-explosion/Tank_Explosion_4.png" type="Texture" id=8]
+[ext_resource path="res://assets/animation/smoke-explosion/Tank_Explosion_0.png" type="Texture" id=9]
+[ext_resource path="res://assets/animation/smoke-explosion/Tank_Explosion_7.png" type="Texture" id=10]
+[ext_resource path="res://assets/animation/smoke-explosion/Tank_Explosion_1.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "destroy",
+"speed": 5.0
+} ]
+
+[node name="TankDestroy" type="Sprite"]
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color( 0.592157, 0.592157, 0.592157, 1 )
+position = Vector2( 20, 60 )
+rotation = 3.14159
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+initial_velocity = 175.44
+initial_velocity_random = 0.04
+linear_accel = 0.93
+
+[node name="DestroyFx" type="AnimatedSprite" parent="."]
+scale = Vector2( 3.75, 3.75 )
+frames = SubResource( 1 )
+animation = "destroy"
+playing = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

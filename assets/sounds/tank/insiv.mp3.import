@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/insiv.mp3-87e7ec10c54a45e378bba4f0b2000290.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/tank/insiv.mp3"
+dest_files=[ "res://.import/insiv.mp3-87e7ec10c54a45e378bba4f0b2000290.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

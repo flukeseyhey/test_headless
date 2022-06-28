@@ -1,0 +1,355 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://src/objects/tank/BaseTank.gd" type="Script" id=1]
+[ext_resource path="res://assets/tank/roo.png" type="Texture" id=2]
+[ext_resource path="res://src/objects/tank/EnemyTank.tres" type="Texture" id=3]
+[ext_resource path="res://src/objects/whitening_shader.tres" type="Material" id=4]
+[ext_resource path="res://assets/tank/cops-04.png" type="Texture" id=5]
+[ext_resource path="res://assets/tank/tanks1_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/tank/Turrets1.png" type="Texture" id=7]
+[ext_resource path="res://assets/tank/cops-03.png" type="Texture" id=8]
+[ext_resource path="res://assets/tank/cops-02.png" type="Texture" id=9]
+[ext_resource path="res://assets/tank/cops-05.png" type="Texture" id=10]
+[ext_resource path="res://assets/tank/tanks2_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/tank/policecar-20.png" type="Texture" id=12]
+[ext_resource path="res://assets/tank/tanks1_1.png" type="Texture" id=13]
+[ext_resource path="res://assets/tank/tanks2_2.png" type="Texture" id=14]
+[ext_resource path="res://assets/tank/policecar-19.png" type="Texture" id=15]
+[ext_resource path="res://assets/tank/Turrets1_2.png" type="Texture" id=17]
+[ext_resource path="res://assets/tank/Turrets1_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/tank/policecar-32.png" type="Texture" id=19]
+[ext_resource path="res://assets/tank/policecar-18.png" type="Texture" id=20]
+[ext_resource path="res://assets/tank/policecar-33.png" type="Texture" id=21]
+[ext_resource path="res://assets/tank/policecar-30.png" type="Texture" id=22]
+[ext_resource path="res://assets/tank/policecar-31.png" type="Texture" id=23]
+[ext_resource path="res://assets/tank/policecar-21.png" type="Texture" id=24]
+[ext_resource path="res://src/objects/tank/BaseTank.tres" type="Texture" id=25]
+[ext_resource path="res://assets/tank/tanks_1.png" type="Texture" id=30]
+[ext_resource path="res://assets/tank/roo2.png" type="Texture" id=31]
+[ext_resource path="res://assets/tank/roo3.png" type="Texture" id=33]
+[ext_resource path="res://assets/tank/tanks_6.png" type="Texture" id=34]
+[ext_resource path="res://assets/tank/tanks_8.png" type="Texture" id=35]
+[ext_resource path="res://assets/tank/roo1.png" type="Texture" id=37]
+
+[sub_resource type="AnimatedTexture" id=3]
+flags = 4
+frames = 4
+fps = 10.0
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 37 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 31 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 33 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=4]
+flags = 4
+frames = 4
+fps = 10.0
+frame_0/texture = ExtResource( 9 )
+frame_1/texture = ExtResource( 8 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 5 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 10 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=5]
+flags = 4
+frames = 4
+fps = 10.0
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 37 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 31 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 33 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=6]
+flags = 4
+frames = 4
+fps = 10.0
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 37 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 31 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 33 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=7]
+flags = 4
+frames = 2
+fps = 10.0
+frame_0/texture = ExtResource( 13 )
+frame_1/texture = ExtResource( 11 )
+frame_1/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=8]
+flags = 4
+frames = 2
+fps = 10.0
+frame_0/texture = ExtResource( 6 )
+frame_1/texture = ExtResource( 14 )
+frame_1/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=9]
+flags = 4
+frames = 4
+fps = 10.0
+frame_0/texture = ExtResource( 20 )
+frame_1/texture = ExtResource( 15 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 12 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 24 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=10]
+flags = 4
+frames = 4
+fps = 10.0
+frame_0/texture = ExtResource( 22 )
+frame_1/texture = ExtResource( 23 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 19 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 21 )
+frame_3/delay_sec = 0.0
+
+[node name="BaseTank" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -42, -52, 57, -52, 60, -51, 60, -48, 60, 45, 57, 48, -46, 48, -48, 45, -48, 29, -48.7543, 23.8037, -55, 4, -55, -7, -49.6982, -21.5023, -48, -27, -48, -46, -47, -51 )
+
+[node name="BodySprite1" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( 5.81426, -1.31206 )
+rotation = 1.5708
+scale = Vector2( 0.834826, 0.815195 )
+texture = ExtResource( 25 )
+region_enabled = true
+region_rect = Rect2( 4, 4, 124, 155 )
+
+[node name="BodySprite2" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( -1.00768, -2.68508 )
+rotation = 1.5708
+scale = Vector2( 0.378739, 0.321921 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 100, 90, 310, 400 )
+
+[node name="BodySprite3" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( 2.22095, 2.00346 )
+rotation = 1.5708
+scale = Vector2( 0.16024, 0.146444 )
+texture = SubResource( 3 )
+region_enabled = true
+region_rect = Rect2( 200, 180, 640, 710 )
+
+[node name="BodySprite4" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( 6.06904, 0.449382 )
+rotation = 1.5708
+scale = Vector2( 0.386013, 0.327714 )
+texture = SubResource( 4 )
+region_enabled = true
+region_rect = Rect2( 40, 90, 300, 350 )
+
+[node name="BodySprite5" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( 6.2486, -1.55249 )
+rotation = 1.5708
+scale = Vector2( 0.15856, 0.151021 )
+texture = SubResource( 5 )
+region_enabled = true
+region_rect = Rect2( 170, 160, 670, 720 )
+
+[node name="BodySprite6" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( 7.64805, -3.83771 )
+rotation = 1.5708
+scale = Vector2( 0.160598, 0.1519 )
+texture = SubResource( 6 )
+region_enabled = true
+region_rect = Rect2( 150, 140, 690, 740 )
+
+[node name="BodySprite7" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( -0.236381, 0.812171 )
+rotation = 1.5708
+scale = Vector2( 0.368708, 0.310814 )
+texture = SubResource( 7 )
+region_enabled = true
+region_rect = Rect2( 120, 110, 290, 350 )
+
+[node name="BodySprite8" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( 2.42922, 0.730146 )
+rotation = 1.5708
+scale = Vector2( 0.367477, 0.31008 )
+texture = SubResource( 8 )
+region_enabled = true
+region_rect = Rect2( 120, 110, 290, 340 )
+
+[node name="BodySprite9" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( 9.30212, -1.95503e-05 )
+rotation = 1.5708
+scale = Vector2( 0.362458, 0.362458 )
+texture = SubResource( 9 )
+region_enabled = true
+region_rect = Rect2( 30, 100, 320, 340 )
+
+[node name="BodySprite10" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+rotation = 1.5708
+scale = Vector2( 0.365553, 0.365553 )
+texture = SubResource( 10 )
+region_enabled = true
+region_rect = Rect2( 45, 110, 285, 344 )
+
+[node name="BodySprite11" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+rotation = 1.5708
+scale = Vector2( 0.365553, 0.365553 )
+texture = SubResource( 10 )
+region_enabled = true
+region_rect = Rect2( 45, 110, 285, 344 )
+
+[node name="BodySprite12" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( -1.35034, -2.24922 )
+rotation = 1.5708
+scale = Vector2( 0.365553, 0.365553 )
+texture = SubResource( 10 )
+region_enabled = true
+region_rect = Rect2( 30, 100, 310, 340 )
+
+[node name="TurretPivot" type="Position2D" parent="."]
+position = Vector2( 22.0486, 0 )
+
+[node name="TurretSprite1" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( -13.4416, -1.72876 )
+rotation = 1.5708
+scale = Vector2( 0.200433, 0.172785 )
+region_enabled = true
+region_rect = Rect2( 240, 90, 530, 780 )
+
+[node name="TurretSprite2" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( 1.40369, 0.352684 )
+rotation = 1.5708
+scale = Vector2( 0.350449, 0.350449 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 190, 90, 150, 330 )
+
+[node name="TurretSprite3" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( -12.1205, -2.57566 )
+rotation = 1.5708
+scale = Vector2( 0.16601, 0.189016 )
+texture = ExtResource( 30 )
+region_enabled = true
+region_rect = Rect2( 250, 90, 510, 780 )
+
+[node name="TurretSprite4" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( -50.8252, 30.6221 )
+rotation = 1.5708
+scale = Vector2( 0.173168, 0.189727 )
+region_enabled = true
+region_rect = Rect2( 50, 60, 270, 550 )
+
+[node name="TurretSprite5" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( -14.9772, 0.212021 )
+rotation = 1.5708
+scale = Vector2( 0.169066, 0.186 )
+texture = ExtResource( 34 )
+region_enabled = true
+region_rect = Rect2( 220, 100, 610, 790 )
+
+[node name="TurretSprite6" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( -2.77611, -7.43053 )
+rotation = 1.5708
+scale = Vector2( 0.168108, 0.183531 )
+texture = ExtResource( 35 )
+region_enabled = true
+region_rect = Rect2( 170, 10, 620, 840 )
+
+[node name="TurretSprite7" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( 0.715679, -0.0884171 )
+rotation = 1.5708
+scale = Vector2( 0.32617, 0.345243 )
+texture = ExtResource( 18 )
+region_enabled = true
+region_rect = Rect2( 180, 80, 170, 350 )
+
+[node name="TurretSprite8" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( 1.24983, 0.375008 )
+rotation = 1.5708
+scale = Vector2( 0.322058, 0.341176 )
+texture = ExtResource( 17 )
+region_enabled = true
+region_rect = Rect2( 180, 80, 170, 340 )
+
+[node name="TurretSprite9" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( 8, -1.81899e-12 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+region_enabled = true
+region_rect = Rect2( 193, 127, 138, 293 )
+
+[node name="TurretSprite10" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( 8, 3.63798e-12 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+region_enabled = true
+region_rect = Rect2( 204, 137, 138, 248 )
+
+[node name="TurretSprite11" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( 8, 3.63798e-12 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+region_enabled = true
+region_rect = Rect2( 204, 137, 138, 248 )
+
+[node name="TurretSprite12" type="Sprite" parent="TurretPivot"]
+visible = false
+position = Vector2( 8, 3.63798e-12 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+region_enabled = true
+region_rect = Rect2( 204, 137, 138, 248 )
+
+[node name="BulletStartPosition" type="Position2D" parent="TurretPivot"]
+position = Vector2( 68, 0 )
+scale = Vector2( 0.55, 0.55 )

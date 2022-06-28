@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/tank-battle.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/game/PowerupLabel.gd" type="Script" id=2]
+
+[node name="PowerupLabel" type="Label"]
+modulate = Color( 1, 1, 1, 0.752941 )
+margin_right = 36.0
+margin_bottom = 13.0
+rect_scale = Vector2( 0.125, 0.125 )
+custom_fonts/font = ExtResource( 1 )
+text = "Weapon"
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -3.0
+margin_right = 9.0
+margin_bottom = 2.0
+mouse_filter = 2
+color = Color( 0.905882, 0.298039, 0.235294, 1 )
+
+[node name="BlinkTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
